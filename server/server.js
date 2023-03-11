@@ -7,7 +7,7 @@ const createCooldown = require('./cooldown');
 
 const app = express();
 
-app.use(express.static(`${__dirname}/../client`));
+app.use(express.static(`${__dirname}/../`));
 
 const server = http.createServer(app);
 const io = socketIo(server);
@@ -15,7 +15,7 @@ const { clear, getBoard, makeTurn} = createBoard(20);
 
 io.on('connection', (sock) => {
     const color = randomColor();
-    const cooldown = createCooldown(2000);
+    const cooldown = createCooldown(1000);
 
     sock.emit('board', getBoard());
 
