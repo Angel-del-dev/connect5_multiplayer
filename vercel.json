@@ -4,6 +4,6 @@
     "version":2,
     "routes": [
         {"handle": "filesystem"},
-        {"src": "/.*", "dest": "/client/index.html"}
+        {"src": "/.*", "dest": "/"}
     ]
 }
